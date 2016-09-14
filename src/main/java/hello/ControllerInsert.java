@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ControllerInsert {
-	@CrossOrigin(origins = "http://localhost:8080/insert")
+	@CrossOrigin(origins = "/insert")
 	@ResponseBody
 	@RequestMapping(value="/insert", method = RequestMethod.POST)
 	public String insert(@RequestBody GridItem item){

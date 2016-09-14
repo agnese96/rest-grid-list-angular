@@ -1,5 +1,6 @@
 package hello;
 
+import java.net.URISyntaxException;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -15,7 +16,12 @@ public class GridListDAO {
 	private JdbcTemplate templateObj;
 	
 	public GridListDAO(){
-		setDataSource();
+		try {
+			setDataSource();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		String sql="CREATE TABLE IF NOT EXISTS GridList("
 				+ "ID SERIAL NOT NULL PRIMARY KEY,"
 				+ "title char(50) NOT NULL, "
@@ -27,8 +33,9 @@ public class GridListDAO {
 	
 	/**
 	 * Method to initialize database resources(connection)
+	 * @throws URISyntaxException 
 	 */
-	public void setDataSource(){
+	public void setDataSource() throws URISyntaxException{
 		DataSource ds= (new createPostgreDataSource()).getDataSource();
 		this.dataSource = ds;
 	    this.templateObj = new JdbcTemplate(this.dataSource);
