@@ -1,0 +1,116 @@
+
+.title {
+    text-align: center;
+    font-weight:300;
+    color: white;
+    font-size: 3em;
+    line-height: 60px;
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #5f6eb9;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(176, 194, 224, 0.37);
+}
+
+.body {
+
+    position: relative;
+    max-width: 800px;
+    min-height: calc(100% - 60px);
+    width: 100%;
+    background-color:white;
+    margin: auto;
+    box-sizing: border-box;
+
+}
+
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+
+
+}
+
+.flex-item {
+    position: relative;
+    margin: 15px;
+    box-sizing: border-box;
+    height: 350px;
+    flex-shrink: 1;
+    flex-basis: 350px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+
+.description {
+    visibility: hidden;
+    transition: 4ms ease all;
+    color: whitesmoke;
+    font-size: larger;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    text-align: center;
+    
+}
+
+.background {
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: 4ms ease all;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+.flex-content {
+    position: relative;
+    top: -350px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    transition: 4ms ease all;
+}
+
+.item-title {
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 1.5px 1.5px rgba(63, 65, 69, 0.46);
+    position: absolute;
+    bottom: 0px;
+    padding: 10px;
+    padding-top: 15px;
+    transition: 5ms ease all;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.flex-item:hover > .background{
+    -webkit-filter:blur(10px);
+    filter: blur(10px);
+}
+.flex-item:hover > .flex-content{
+    border: 10px solid rgba(114, 116, 123, 0.53);
+}
+.flex-item:hover > .flex-content >.item-title{
+    position: relative;
+    text-align: center;
+}
+.flex-item:hover > .flex-content >.description{
+    visibility: visible;
+
+}
