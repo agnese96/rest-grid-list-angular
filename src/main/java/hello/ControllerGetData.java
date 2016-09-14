@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ControllerGetData {
-	@CrossOrigin(origins = "/get-data")
 	@GetMapping("/get-data")
 	public List<GridItem> getGridList(){
 		GridListDAO dao= new GridListDAO();
